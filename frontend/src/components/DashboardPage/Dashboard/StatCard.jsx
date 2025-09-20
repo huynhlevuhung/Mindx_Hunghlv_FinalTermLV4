@@ -1,16 +1,21 @@
 import React from "react";
+import { Users, CreditCard, DollarSign } from "lucide-react";
 
-const StatCard = ({ title, value, icon }) => {
+const StatCard = ({ title, value, color, icon: Icon }) => {
   return (
-    <div className="bg-white p-4 rounded-2xl shadow-md flex items-center gap-4">
-      {/* Icon (nếu có) */}
-      {icon && <div className="text-indigo-600 text-3xl">{icon}</div>}
+    <div className={`flex items-center gap-4 rounded-lg shadow-md p-6 text-white ${color}`}>
 
-      {/* Nội dung */}
+
+      {/* Text */}
       <div>
-        <p className="text-gray-500 text-sm">{title}</p>
-        <h3 className="text-xl font-bold text-gray-800">{value}</h3>
+        <h3 className="text-sm font-medium">{title}</h3>
+        <p className="text-2xl font-bold">{value}</p>
       </div>
+
+      <div className="p-3 bg-white/20 rounded-full">
+        <Icon className="w-6 h-6" />
+      </div>
+
     </div>
   );
 };
